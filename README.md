@@ -160,6 +160,8 @@ Want to change what it recommends, or add a preset? See [Customize](docs/customi
 
 Both editions were built by Nishkarsh Shah with Claude.
 
+A community edition for Muse, built on this project, is available in [MaximusMaxxx’s fork](https://github.com/MaximusMaxxx/prompt-master-muse/tree/c5e413d/muse/prompt-master). I haven’t tested or reviewed it.
+
 ## License
 
 MIT. See [LICENSE](LICENSE).
