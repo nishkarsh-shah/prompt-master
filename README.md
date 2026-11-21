@@ -89,8 +89,6 @@ On Team and Enterprise plans, an owner may need to allow plugins first.
 - **Signed in with the same Claude account:** Prompt Master appears there automatically, in the desktop app and in the terminal. A zip upload also runs as `/prompt-master`.
 - **Using an API key, or want it without Claude chat:** use the [terminal install](docs/terminal-install.md).
 
-> For clickable buttons after a `pm:` rewrite, turn on visuals or interactive content in the same settings.
-
 Installed? Try the [commands](#commands) next, or type `pm help`.
 
 <br>
@@ -148,7 +146,9 @@ The picker scores how hard, broad, risky and vague the task is. It only recommen
 | Topic | What to know |
 | --- | --- |
 | **Updating** | An uploaded skill doesn't pull changes from GitHub. Download the new zip and upload it again. Directory installs update when a new version is published. Terminal installs update with the command on the [terminal install page](docs/terminal-install.md). |
-| **Buttons** | After a `pm:` answer you get **Rewrite again**, **Why?** and **Undo**. In Claude, some versions only fill the message box when you click, so press Enter to send. ChatGPT shows them where the app supports native action buttons. Where there are none, such as the Claude Code terminal or Codex, type `pm again`, `pm why` or `pm undo`. |
+| **Follow-ups** | After a `pm:` answer, Claude ends with a line telling you to type `pm again`, `pm why` or `pm undo`. ChatGPT shows them as buttons where the app supports native action buttons. Where there are none, such as Codex, type them. |
+| **Capital letters** | `pm:` and `Pm:` both work, since phone keyboards capitalize the first letter. All-caps `PM:` and `EP:` are ignored, so notes like "PM: standup" don't start it. |
+| **Plain asks** | In Claude, asking "improve this prompt" or "which model should I use for this?" without typing `pm` also works. It runs `pm only:` or `ep:` and adds a tip to type `pm:` next time. |
 | **Advice only** | The skill never switches models or starts subagents for you. `ep claude:` and `ep codex:` only suggest a plan. Pick the model yourself, and in Claude use the extended thinking toggle for medium effort and above. |
 | **Your plan** | On a Free plan it never recommends a paid-only model. The Claude edition is tuned for Pro and Max, and on pay-per-token API it leans cheaper when the stakes are low. |
 | **Privacy** | Prompt Master doesn't collect, store or send any data. The skill is told to replace passwords, API keys and card or ID numbers with `[redacted]` in the rewrite, but don't paste real secrets: the AI provider has already received your text. See the [privacy policy](claude/plugin/PRIVACY.md). |

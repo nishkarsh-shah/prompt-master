@@ -1,13 +1,25 @@
 {
   "name": "prompt-master",
-  "version": "1.0.2",
-  "description": "Rough prompt in, clear prompt out, plus the right model and effort level to run it. Presets for code, email, study and research.",
+  "version": "1.0.3",
+  "description": "Turns rough prompts into clear ones and recommends the model and effort level to run them. Type pm: before a prompt. Works for code, email, study and research.",
   "author": {
     "name": "Nishkarsh Shah"
   },
   "license": "MIT",
+  "keywords": [
+    "prompt-engineering",
+    "prompt-rewriter",
+    "prompt-improver",
+    "model-picker",
+    "model-selection",
+    "effort-level",
+    "writing",
+    "study"
+  ],
   "homepage": "https://github.com/nishkarsh-shah/prompt-master",
   "repository": "https://github.com/nishkarsh-shah/prompt-master",
+  "icon": "./.claude-plugin/icon.png",
+  "documentationUrl": "https://github.com/nishkarsh-shah/prompt-master#readme",
   "privacyPolicyUrl": "https://github.com/nishkarsh-shah/prompt-master/blob/main/claude/plugin/PRIVACY.md",
   "supportUrl": "https://github.com/nishkarsh-shah/prompt-master/issues"
 }
