@@ -14,7 +14,7 @@
 
 <p align="center"><a href="#pick-your-install">Install</a> · <a href="#commands">Commands</a> · <a href="#models-it-recommends">Models</a> · <a href="#good-to-know">Good to know</a></p>
 
-https://github.com/user-attachments/assets/27a8a5e7-c70a-47d0-95b8-8ed3b9e2f5e4
+https://github.com/user-attachments/assets/9bbe621f-aff3-4116-a27e-9cd47a12f054
 
 ## Pick your install
 

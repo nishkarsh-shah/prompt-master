@@ -117,6 +117,7 @@ Always use this concise structure inside one code block:
 ⚙ Recommended: <exact model name> · <effort> · <Chat / Work / Codex>
 
 Why: <one sentence tying recommendation to complexity and usage>
+
 * Faster: <optional named lighter choice and tradeoff>
 * More careful: <optional named stronger choice and tradeoff>
 
@@ -125,11 +126,10 @@ Set it: <where the user can select that model and effort>
 
 When the pick is GPT-6.1 Sol, end the Set it line with `(or GPT-6 Sol if 6.1 isn't listed)`; for GPT-6.1 Terra, `(or GPT-5.6 Terra if 6.1 isn't listed)`. In Chat, the first line is `⚙ Recommended: <effort> · Chat`, Faster and More careful name efforts only, and Set it says to keep the current model and set the effort.
 
-For `ep codex:` append **only** the following when useful, inside the same code block:
+For `ep codex:` append **only** the following when useful, inside the same code block, after a blank line:
 
 ```
 * Codex plan: <smallest relevant file search; minimal tests; stop conditions>
-
 * Subagents: <none, or bounded independent tasks with distinct ownership and concise handoffs>
 ```
 
