@@ -2,11 +2,11 @@
 
 # Prompt Master
 
-**Rough prompt in, clear prompt out, plus the right model and effort level to run it.**
+**Rough prompt in, clear prompt out, plus a suggested model and effort level to run it.**
 
 Type `pm:` before a rough prompt. Prompt Master rewrites it into a clearer one, shows you the rewrite, and answers it. Type `ep:` before a task to find out which Claude model and effort level to use, without doing the task.
 
-New to these words? The **model** is which Claude answers: Haiku, Sonnet or Opus, from lightest to strongest. The **effort level** is how hard it thinks before replying: low, medium, high or max.
+New to these words? The **model** is which Claude answers: Haiku, Sonnet or Opus, from lightest to strongest. The **effort level** is how hard it thinks before replying: low, medium, high, extra high or max.
 
 ## Start here
 
@@ -26,7 +26,7 @@ pm: help me write a message asking my landlord to fix the heater
 
 It rewrites your prompt:
 
-> Write a short message to my landlord asking them to fix the heater in my apartment. Describe the problem ([what the heater is doing]) and since when ([date]), and ask when someone can come take a look. End with the times I'm home ([times]).
+> Write a message to my landlord asking them to fix the heater in [my unit/address]. Briefly describe the problem: [what's wrong with the heater and since when]. Ask them to arrange a repair by [date] and to confirm a time that works. Keep the tone polite but firm, and short enough to send as a text or email.
 
 Then it answers that clearer prompt. Details you didn't give become `[placeholders]` instead of guesses.
 
@@ -39,16 +39,15 @@ Then it answers that clearer prompt. Details you didn't give become `[placeholde
 - `ep claude: <task>` gives the same, plus a short Claude Code plan, plan mode and subagent advice.
 - `pm code:`, `pm email:`, `pm study:` and `pm research:` are presets that shape the rewrite for that kind of task.
 - `pm critique: <rough prompt>` gives a score out of 10, what's missing, and the one fix to make first.
-- `pm why`, `pm again` and `pm undo` explain the last rewrite, redo it, or answer your original draft as typed.
 - `pm help` lists every command, with examples.
 
-You can also ask in plain words, such as "improve this prompt" or "which model should I use for this?". After a `pm:` answer, type `pm again` to redo it, `pm why` to see what changed, or `pm undo` to go back to your original.
+You can also ask in plain words, such as "improve this prompt" or "which model should I use for this?".
 
 ## Which model it suggests
 
-The picker scores how hard, broad, risky and vague the task is, and only recommends the strongest models when the score earns them. Each bar shows the score range for that model. It only suggests: you choose the model yourself.
+The picker scores how hard, broad, risky and vague the task is. Then it picks the model and the effort in two separate steps, so any model can pair with any effort. It only suggests: you choose the model and effort yourself.
 
-![Model ladder for Claude, from Haiku low for simple tasks up to Opus max for the hardest ones](images/ladder.png)
+![Two-step picker for Claude. Step 1 picks Haiku, Sonnet or Opus from how hard and how big the task is. Step 2 picks low, medium, high or extra high effort from how hard, risky and unclear it is.](images/ladder.png)
 
 ## What it contains
 
@@ -60,6 +59,6 @@ Prompt Master doesn't collect, store or send any data. It works only on the text
 
 ## More
 
-Full documentation, other install options and a ChatGPT and Codex edition: https://github.com/nishkarsh-shah/prompt-master
+Full documentation and other install options: https://github.com/nishkarsh-shah/prompt-master
 
 MIT licensed.

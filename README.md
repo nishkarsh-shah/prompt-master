@@ -22,11 +22,9 @@ The two editions have the same commands. Download the one you use, or both.
 
 | You use | Do this | Details |
 | --- | --- | --- |
-| Claude chat and Claude Code | Add it from the Claude directory, or download [`prompt-master-claude.zip`](claude/prompt-master-claude.zip) and upload it in **Settings → Skills**. Claude Code gets either automatically, or install it from the [terminal](docs/terminal-install.md) | [Install](#install-claude-and-claude-code) · [Claude Code](#using-claude-code) |
-| ChatGPT and ChatGPT Work | Download [`prompt-master-chatgpt.zip`](chatgpt/prompt-master-chatgpt.zip) and upload it in **Skills → Create** | [Install](#install-chatgpt-and-chatgpt-work) |
-| Codex | Run `$skill-installer`, or [link the repo](docs/terminal-install.md) to stay up to date | [Install](#install-codex) |
-
-Commands on this page are for Mac and Linux. Windows (PowerShell) versions are in [Terminal install](docs/terminal-install.md).
+| Claude chat and Claude Code | Add it from the Claude directory, or download [`prompt-master-claude.zip`](https://github.com/nishkarsh-shah/prompt-master/raw/main/claude/prompt-master-claude.zip) and upload it under **Settings → Capabilities → Skills**. Claude Code gets either automatically, or install it from the [terminal](docs/terminal-install.md). | [Install](#install-claude-and-claude-code) · [Claude Code](#using-claude-code) |
+| ChatGPT and ChatGPT Work | Download [`prompt-master-chatgpt.zip`](https://github.com/nishkarsh-shah/prompt-master/raw/main/chatgpt/prompt-master-chatgpt.zip) and upload it in **Skills → Create**. | [Install](#install-chatgpt-and-chatgpt-work) |
+| Codex | Run `$skill-installer`, or [link the repo](docs/terminal-install.md) to stay up to date. | [Install](#install-codex) |
 
 > [!TIP]
 > **Check it works:** start a new chat or session and type `pm help`. It shows every command with examples, so use it any time you forget one. An existing chat keeps the instructions it already loaded.
@@ -37,52 +35,69 @@ Commands on this page are for Mac and Linux. Windows (PowerShell) versions are i
 
 ## Commands
 
+**Make a prompt better**
+
 | You type | You get |
 | --- | --- |
 | `pm: <rough prompt>` | A rewritten prompt, then the answer to it |
 | `pm only: <rough prompt>` | Only the rewritten prompt, in a copy-ready block |
-| `pm pick: <rough prompt>` | The rewrite, then a model and effort recommendation for it (no answer) |
+| `pm code:` `pm email:` `pm study:` `pm research:` | Use one of these words in place of `pm:` to shape the rewrite for that kind of task. Example: `pm email: tell my manager I'll be late` |
+
+**Choose a model**
+
+| You type | You get |
+| --- | --- |
 | `ep: <task>` | A model and effort recommendation for the task as you wrote it |
 | `ep claude: <task>` | Claude edition only: the same, plus a short Claude Code plan, plan mode and subagent advice |
 | `ep codex: <task>` | ChatGPT edition only: the same, plus a short Codex plan and subagent advice |
-| `pm code:` `pm email:` `pm study:` `pm research:` | A preset that shapes the rewrite for that kind of task. Combine them: `pm only email:`, `pm pick code:` |
+| `pm pick: <rough prompt>` | The rewrite, then a model and effort recommendation for it (no answer) |
+
+**Check a prompt**
+
+| You type | You get |
+| --- | --- |
 | `pm critique: <rough prompt>` | A score out of 10, what's missing, and the one fix to make first (no rewrite) |
-| `pm why` | What changed in the last rewrite and why |
-| `pm again` / `pm undo` | A fresh rewrite, or an answer to your original draft as typed |
-| **`pm help`** | **The full command list with examples. Use it whenever you forget a command.** |
 
-Typing is case-insensitive. If key details are missing (numbers, an attached file, a vague goal), it asks up to three quick questions first, and **go** accepts its suggestions. `pm only:`, `pm pick:` and the `ep` commands never ask: they use `[placeholders]` instead.
+Stuck? Type **`pm help`** for every command, with examples.
 
-### What the presets add
+If key details are missing (numbers, an attached file, a vague goal), it asks up to three quick questions first, and **go** accepts its suggestions. `pm only:`, `pm pick:` and the `ep` commands never ask: they use `[placeholders]` instead.
 
-- **code:** language, your code and the exact error, expected vs actual behavior, constraints, output format, how to tell it works.
-- **email:** who it's to, the goal, key points, tone, length, the one action you want, a deadline, subject line plus body.
-- **study:** your level, topic and goal, time available, teaching from scratch with simple examples, practice questions, a check of understanding.
-- **research:** the exact question, scope and time frame, depth, sources, facts kept separate from guesses, uncertainty stated.
+### What the presets do
+
+Presets are shortcuts for common kinds of requests. Normally Prompt Master works out what your request needs. A preset tells it what to cover for that kind of task, so you don't have to remember. Type the preset word in place of `pm:`.
+
+- **code** is for programming problems. It makes sure your code, your error message and what you expected to happen are included. Example: `pm code: my script crashes when the file is empty`
+- **email** is for writing emails. It makes sure it knows who the email is to, what you want, the tone, and the one thing you want them to do. Example: `pm email: ask my landlord to fix the heater`
+- **study** is for learning something. It starts from your level, explains with simple examples, then gives you practice questions. Example: `pm study: explain how interest rates work`
+- **research** is for looking something up. It keeps facts apart from guesses, says how sure it is, and lists sources. Example: `pm research: how has remote work changed productivity`
 
 <p align="center"><img src="assets/divider.svg" alt="" width="100%" height="27"></p>
 
 ## Claude edition
 
-<a href="claude/prompt-master-claude.zip"><img src="assets/claude-edition.svg" alt="For Claude chat and Claude Code. Download the Claude zip." width="100%" height="84"></a>
+<a href="https://github.com/nishkarsh-shah/prompt-master/raw/main/claude/prompt-master-claude.zip"><img src="assets/claude-edition.svg" alt="For Claude chat and Claude Code. Download the Claude zip." width="100%" height="84"></a>
 
 ### Install (Claude and Claude Code)
 
-> [!WARNING]
-> **Only choose one option.** Installing both shows Prompt Master twice.
+**Only choose one option.** Installing both shows Prompt Master twice.
 
-**Option 1: add it from the Claude directory**
+<img src="assets/option-1.svg" alt="Option 1, recommended" width="260" height="36">
 
-1. In Claude on the web or the desktop app, open **Customize** in the left sidebar, then **Plugins**, then **Discover**.
-2. Search for **Prompt Master**, open it, check that the author is **Nishkarsh Shah**, and click **Add**.
+**Add it from the Claude directory.** It updates itself when a new version is published.
 
-On Team and Enterprise plans, an owner may need to allow plugins first.
+1. In Claude on the web or desktop, open **Customize → Plugins → Discover**.
+2. Search for **Prompt Master**, check that the author is **Nishkarsh Shah**, and click **Add**.
 
-**Option 2: upload the zip** (web, desktop and mobile apps)
+<br>
 
-1. Download [`prompt-master-claude.zip`](claude/prompt-master-claude.zip): open the file on GitHub and click the download button.
-2. In Claude, open **Settings → Capabilities** and turn on **Code execution and file creation**. On Team and Enterprise plans, an admin may need to allow skills first.
-3. Under **Skills**, choose **Upload skill**, pick the zip, and make sure its toggle is on.
+<img src="assets/option-2.svg" alt="Option 2, upload the zip" width="260" height="36">
+
+**Use this if you can't find it in the directory.** It also works on mobile. A zip doesn't update itself: when a new version comes out, download the new zip and upload it again.
+
+1. Download the zip above, then in **Settings → Capabilities**, turn on **Code execution and file creation**.
+2. Under **Skills**, choose **Upload skill**, pick the zip and switch it on.
+
+On Team and Enterprise plans, an admin may need to allow plugins and skills first.
 
 ### Using Claude Code
 
@@ -95,12 +110,13 @@ Installed? Try the [commands](#commands) next, or type `pm help`.
 
 ## ChatGPT edition
 
-<a href="chatgpt/prompt-master-chatgpt.zip"><img src="assets/chatgpt-edition.svg" alt="For ChatGPT, ChatGPT Work and Codex. Download the ChatGPT zip." width="100%" height="84"></a>
+<a href="https://github.com/nishkarsh-shah/prompt-master/raw/main/chatgpt/prompt-master-chatgpt.zip"><img src="assets/chatgpt-edition.svg" alt="For ChatGPT, ChatGPT Work and Codex. Download the ChatGPT zip." width="100%" height="84"></a>
 
 ### Install (ChatGPT and ChatGPT Work)
 
-1. Download [`prompt-master-chatgpt.zip`](chatgpt/prompt-master-chatgpt.zip): open the file on GitHub and click the download button.
-2. In ChatGPT, open **Skills**, choose **Create**, then **Upload from your computer**, and pick the zip. On workspace plans, an admin may need to allow skill uploads first.
+- Download the zip above, then in ChatGPT open **Skills → Create → Upload from your computer** and pick it.
+
+On workspace plans, an admin may need to allow skill uploads first.
 
 ### Install (Codex)
 
@@ -118,26 +134,36 @@ Installed? Try the [commands](#commands) next, or type `pm help`.
 
 ## Models it recommends
 
-The picker scores how hard, broad, risky and vague the task is. It only recommends the top models or max effort when the score earns it. Each bar shows the score range for that model. The picker is a rule of thumb, not a tested algorithm, and each column is its own ladder: rows show similar difficulty, not equal models.
+The picker scores how hard, broad, risky and vague the task is. Then it picks the model and the effort in two separate steps, so any model can pair with any effort. How hard and how big the task is sets the model. How hard, risky and unclear it is sets the effort. The picker is a rule of thumb, not a tested algorithm, and each column is its own ladder: rows show similar difficulty, not equal models.
 
-<img src="assets/ladder.svg" alt="Model ladder: harder tasks get a stronger model. The same list is in the table below." width="100%" height="512">
+<img src="assets/ladder.svg" alt="Two-step picker. Step 1 picks the model from how hard and how big the task is. Step 2 picks the effort from how hard, risky and unclear it is. The same lists are in the tables below." width="100%" height="600">
 
 <details>
-<summary>The same list as a table</summary>
+<summary>The same lists as tables</summary>
 
-| Task | Claude | ChatGPT and Codex |
+**Step 1, model:** score = 2 × how hard + how big (0–9)
+
+| Model score | Claude | ChatGPT and Codex |
 | --- | --- | --- |
-| Lookups, formatting, simple questions | Haiku · low | GPT-5.6 Luna · low |
-| Small clear edits and answers | Sonnet · low | GPT-5.6 Terra · low |
-| Routine work | Sonnet · medium | GPT-5.6 Sol · medium |
-| Multi-file work with a clear goal | Opus · medium | GPT-6 Sol · high |
-| Hard debugging, design, subtle trade-offs | Opus · high | GPT-6.1 Sol · high |
-| Deep architecture, security | Opus · max | GPT-6 Astra · high |
+| 0–1 | Haiku | Luna |
+| 2–3 | Sonnet | Terra |
+| 4–6 | Sonnet | Sol |
+| 7–9 | Opus | Astra |
+
+**Step 2, effort:** score = how hard + how risky + how unclear (0–9)
+
+| Effort score | Effort |
+| --- | --- |
+| 0–1 | Low |
+| 2–4 | Medium |
+| 5–7 | High |
+| 8–9 | Extra high |
 
 </details>
 
-- **Claude:** a mechanical change to one file or item, such as a rename or a typo fix, always gets Haiku · low.
-- **ChatGPT and Codex:** it adds a fallback in case your selector lacks the first pick, and stays on 5.6 until a task needs 6.x, which uses far more of your limits. A light but risky or unclear task steps up within the same family.
+- **Both:** a mechanical change to one file or item, such as a rename or a typo fix, always gets the lightest model at low effort. Max is never the first pick: it shows up only as the "More careful" option after extra high.
+- **Claude:** an unclear or high-risk task moves from Sonnet to Opus, and a task that would need Sonnet at extra high gets Opus at high instead. The hardest, longest tasks add "(or Fable)" for plans that include it.
+- **ChatGPT and Codex:** it names the current version of each model, such as GPT-6.1 Sol. Screenshots, charts, app actions and writing go to Terra. Ultra comes up only for work that splits into independent parts. Names checked Nov 21, 2026.
 
 <p align="center"><img src="assets/divider.svg" alt="" width="100%" height="27"></p>
 
@@ -146,11 +172,12 @@ The picker scores how hard, broad, risky and vague the task is. It only recommen
 | Topic | What to know |
 | --- | --- |
 | **Updating** | An uploaded skill doesn't pull changes from GitHub. Download the new zip and upload it again. Directory installs update when a new version is published. Terminal installs update with the command on the [terminal install page](docs/terminal-install.md). |
-| **Follow-ups** | After a `pm:` answer, Claude ends with a line telling you to type `pm again`, `pm why` or `pm undo`. ChatGPT shows them as buttons where the app supports native action buttons. Where there are none, such as Codex, type them. |
+| **Follow-ups** | After a `pm:` answer, it ends with a line telling you to type `pm again`, `pm why` or `pm undo`. |
 | **Capital letters** | `pm:` and `Pm:` both work, since phone keyboards capitalize the first letter. All-caps `PM:` and `EP:` are ignored, so notes like "PM: standup" don't start it. |
 | **Plain asks** | In Claude, asking "improve this prompt" or "which model should I use for this?" without typing `pm` also works. It runs `pm only:` or `ep:` and adds a tip to type `pm:` next time. |
-| **Advice only** | The skill never switches models or starts subagents for you. `ep claude:` and `ep codex:` only suggest a plan. Pick the model yourself, and in Claude use the extended thinking toggle for medium effort and above. |
-| **Your plan** | On a Free plan it never recommends a paid-only model. The Claude edition is tuned for Pro and Max, and on pay-per-token API it leans cheaper when the stakes are low. |
+| **Advice only** | The skill never switches models or starts subagents for you. `ep claude:` and `ep codex:` only suggest a plan. Pick the model and the effort yourself. |
+| **ChatGPT Chat** | You pick from fewer models there, so Prompt Master suggests an effort level and leaves the model to you. |
+| **Your plan** | It can't see your plan, so say it in the task, like `ep: I'm on the Free plan, …`. On Free it won't recommend a paid-only model, and on pay-per-token API it suggests a lower effort when the stakes are low. Without a plan named, the Claude edition assumes Pro or Max. |
 | **Privacy** | Prompt Master doesn't collect, store or send any data. The skill is told to replace passwords, API keys and card or ID numbers with `[redacted]` in the rewrite, but don't paste real secrets: the AI provider has already received your text. See the [privacy policy](claude/plugin/PRIVACY.md). |
 | **Language** | The rewrite uses the same language as your draft. |
 

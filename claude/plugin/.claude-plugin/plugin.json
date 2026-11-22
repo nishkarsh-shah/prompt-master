@@ -1,6 +1,6 @@
 {
   "name": "prompt-master",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Turns rough prompts into clear ones and recommends the model and effort level to run them. Type pm: before a prompt. Works for code, email, study and research.",
   "author": {
     "name": "Nishkarsh Shah"

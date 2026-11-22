@@ -1,8 +1,8 @@
 # Privacy policy
 
-Effective date: 17 November 2026
+Effective date: 21 November 2026
 
-This policy covers Prompt Master, a skill and plugin for Claude made by Nishkarsh Shah. The ChatGPT and Codex edition works the same way.
+This policy covers Prompt Master, a skill and plugin for Claude made by Nishkarsh Shah. The other edition on the GitHub page works the same way.
 
 ## What Prompt Master is
 
@@ -19,7 +19,7 @@ None. Prompt Master:
 
 ## How your text is handled
 
-Prompt Master works only on the text you type in a chat. That text is processed by the AI app you are using, under that app's own privacy policy: Anthropic's for Claude, OpenAI's for ChatGPT and Codex. The author of Prompt Master never receives it.
+Prompt Master works only on the text you type in a chat. That text is processed by the AI app you are using, under that app's own privacy policy, which for Claude is Anthropic's. The author of Prompt Master never receives it.
 
 When a draft contains passwords, API keys, or card or ID numbers, Prompt Master is instructed to replace them with `[redacted]` in the rewritten prompt.
 
