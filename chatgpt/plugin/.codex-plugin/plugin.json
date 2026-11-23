@@ -1,0 +1,50 @@
+{
+  "name": "prompt-master",
+  "version": "1.1.0",
+  "description": "Turns rough prompts into clear ones and recommends the model and effort level to run them. Type pm: before a prompt. Works for code, email, study and research.",
+  "author": {
+    "name": "Nishkarsh Shah"
+  },
+  "homepage": "https://github.com/nishkarsh-shah/prompt-master",
+  "repository": "https://github.com/nishkarsh-shah/prompt-master",
+  "license": "MIT",
+  "keywords": [
+    "prompt-engineering",
+    "prompt-rewriter",
+    "prompt-improver",
+    "model-picker",
+    "model-selection",
+    "effort-level",
+    "writing",
+    "study"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Prompt Master",
+    "shortDescription": "Rewrite prompts, pick a model",
+    "longDescription": "Turns rough prompts into clear ones and recommends the model and effort level to run them. Type pm: before a prompt. Works for code, email, study and research.",
+    "developerName": "Nishkarsh Shah",
+    "category": "Productivity",
+    "capabilities": [
+      "Rewrite prompts",
+      "Recommend model and effort"
+    ],
+    "websiteURL": "https://github.com/nishkarsh-shah/prompt-master",
+    "supportURL": "https://github.com/nishkarsh-shah/prompt-master/issues",
+    "privacyPolicyURL": "https://github.com/nishkarsh-shah/prompt-master/blob/main/chatgpt/plugin/PRIVACY.md",
+    "defaultPrompt": [
+      "pm help",
+      "pm: help me write a message asking my landlord to fix the heater",
+      "ep: fix a race condition in my job queue"
+    ],
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png"
+  },
+  "extensions": {
+    "com.openai": {
+      "publication": {
+        "release_notes": "Initial release."
+      }
+    }
+  }
+}

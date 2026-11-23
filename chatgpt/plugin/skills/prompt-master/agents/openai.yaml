@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prompt Master"
+  short_description: "Rewrite prompts and choose efficient reasoning settings"
+  default_prompt: "pm help"
