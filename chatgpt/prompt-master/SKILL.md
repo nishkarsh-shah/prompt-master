@@ -1,6 +1,6 @@
 ---
 name: prompt-master
-description: Improve rough prompts and recommend efficient model and reasoning settings across ChatGPT, ChatGPT Work, and Codex. Use when a message begins with pm:, pm only:, pm pick:, pm code:, pm email:, pm study:, pm research:, pm critique:, ep:, or ep codex:, including combined pm options; for pm help, pm why, pm again, pm undo; or when the user specifically asks to rewrite or critique a prompt or choose a suitable model for a task. Preserve the user's goals and avoid wasting model usage.
+description: Rewrites rough prompts and recommends a model and effort level in ChatGPT, ChatGPT Work and Codex. Use when a message begins with pm:, pm only:, pm pick:, pm code:, pm email:, pm study:, pm research:, pm critique:, ep:, or ep codex:, including combined pm options; for pm help, pm why, pm again, pm undo; or when the user asks to rewrite or critique a prompt or choose a model for a task.
 ---
 
 Use available platform tools only; never pretend to switch models, start subagents, or modify settings. Prioritize concise outputs and low unnecessary context usage.
@@ -105,16 +105,16 @@ Override without exception: a mechanical change in a **single file or item** (re
 
 ## Named model picker (required output)
 
-**Always name a concrete model**, using only these versions (checked Nov 21, 2026): **GPT-6 Luna**, **GPT-6.1 Terra**, **GPT-6.1 Sol**, **GPT-6 Astra**. Never write a version not in this list (there is no GPT-6.1 Luna or GPT-6.1 Astra). If the user says their selector shows GPT-6.2 Sol or GPT-6.2 Astra, use that instead. Use a GPT-5.6 model only when the user says it is the only version of that name shown. Never recommend Max or Ultra first: offer Max only as More careful after Extra High, and suggest Ultra only when the work splits into independent parts.
+**Outside Chat, always name a model** by its family name only: **Luna**, **Terra**, **Sol** or **Astra**. Never add a version number; the user picks the newest version of that model their selector shows. Never recommend Max or Ultra first: offer Max only as More careful after Extra High, and suggest Ultra only when the work splits into independent parts.
 
 Faster is one effort step lower, or the next lighter model when effort is already Low. More careful is one effort step higher, or the next stronger model when effort is already Extra High (after Astra · Extra High, it is Astra · Max). Leave out a line when there is none.
 
-Label the surface from `ep codex`, Codex coding work, Work/browser actions, or otherwise Chat. Effort labels vary by selector, so use the nearest one shown: Work and Codex show Light (Low in the CLI), Medium, High, Extra High and Max; where a selector shows Instant, that is Low. In ChatGPT Chat the picker has only a couple of models, so recommend the effort and leave the model to the user; name a model there only if it matches one on the ladder. The names are recommendations, not proof of access: if a model isn't in the user's selector, name the nearest one it shows, same name first. Free plan: never recommend a paid-only model; use the strongest one shown and say it's capped. Pay-per-token API: go one effort step lower when the stakes are low. For Edu, note that admins control rollout. Never invent quotas, prices or savings, and never imply the model switches automatically.
+Label the surface from `ep codex`, Codex coding work, Work/browser actions, or otherwise Chat. Effort labels vary by selector, so use the nearest one shown: Work and Codex show Light (Low in the CLI), Medium, High, Extra High and Max; where a selector shows Instant, that is Low. In ChatGPT Chat the picker has only a couple of models, so recommend the effort and leave the model to the user. The names are recommendations, not proof of access: if a model isn't in the user's selector, name the nearest one it shows. Free plan: never recommend a paid-only model; use the strongest one shown and say it's capped. Pay-per-token API: go one effort step lower when the stakes are low. For Edu, note that admins control rollout. Never invent quotas, prices or savings, and never imply the model switches automatically.
 
 Always use this concise structure inside one code block:
 
 ```
-⚙ Recommended: <exact model name> · <effort> · <Chat / Work / Codex>
+⚙ Recommended: <model> · <effort> · <Work / Codex>
 
 Why: <one sentence tying recommendation to complexity and usage>
 
@@ -124,7 +124,7 @@ Why: <one sentence tying recommendation to complexity and usage>
 Set it: <where the user can select that model and effort>
 ```
 
-When the pick is GPT-6.1 Sol, end the Set it line with `(or GPT-6 Sol if 6.1 isn't listed)`; for GPT-6.1 Terra, `(or GPT-5.6 Terra if 6.1 isn't listed)`. In Chat, the first line is `⚙ Recommended: <effort> · Chat`, Faster and More careful name efforts only, and Set it says to keep the current model and set the effort.
+Set it says to pick the newest version of that model in the selector, then set the effort. In Chat, the first line is `⚙ Recommended: <effort> · Chat`, Faster and More careful name efforts only, and Set it says to keep the current model and set the effort.
 
 For `ep codex:` append **only** the following when useful, inside the same code block, after a blank line:
 

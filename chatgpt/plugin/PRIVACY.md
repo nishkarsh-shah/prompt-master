@@ -1,12 +1,12 @@
 # Privacy policy
 
-Effective date: 23 November 2026
+Effective date: 25 November 2026
 
 This policy covers Prompt Master, a skill and plugin for ChatGPT and Codex made by Nishkarsh Shah. The other edition on the GitHub page works the same way.
 
 ## What Prompt Master is
 
-Prompt Master is a set of written instructions, one `SKILL.md` file. It has no code, scripts, hooks, MCP servers, connectors or servers of its own.
+Prompt Master is a set of written instructions in one `SKILL.md` file, packaged with its icons and a small settings file that sets its name and description. It has no code, scripts, hooks, MCP servers, connectors or servers of its own.
 
 ## Data it collects, stores or sends
 

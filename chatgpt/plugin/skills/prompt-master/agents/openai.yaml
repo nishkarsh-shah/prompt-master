@@ -1,4 +1,4 @@
 interface:
   display_name: "Prompt Master"
-  short_description: "Rewrite prompts and choose efficient reasoning settings"
+  short_description: "Rewrite prompts, pick a model"
   default_prompt: "pm help"
