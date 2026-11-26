@@ -102,5 +102,6 @@ On Claude Team and Enterprise plans, and on ChatGPT workspace plans, an admin ma
 Before switching to a different way, remove the one you have:
 
 - **Claude chat:** open **Settings → Plugins**, find Prompt Master, and remove it.
+- **ChatGPT:** open **Plugins**, find Prompt Master, and turn it off or uninstall it.
 - **Claude Code terminal:** `rm -rf ~/.claude/skills/prompt-master`
 - **Codex:** `rm -rf ~/.agents/skills/prompt-master`
