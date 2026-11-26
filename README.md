@@ -9,7 +9,7 @@
 <p align="center">
   <a href="LICENSE"><img src="assets/badge-license.svg" alt="MIT license" width="186" height="32"></a>
   <a href="#claude-and-claude-code"><img src="assets/badge-claude.svg" alt="Works with Claude" width="186" height="32"></a>
-  <a href="#chatgpt"><img src="assets/badge-chatgpt.svg" alt="Works with ChatGPT and Codex" width="230" height="32"></a>
+  <a href="#chatgpt"><img src="assets/badge-chatgpt.svg" alt="Works with ChatGPT" width="186" height="32"></a>
 </p>
 
 <p align="center"><a href="#install">Install</a> · <a href="#commands">Commands</a> · <a href="#presets">Presets</a> · <a href="#models-it-recommends">Models</a> · <a href="#good-to-know">Good to know</a></p>
