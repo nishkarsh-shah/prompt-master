@@ -36,7 +36,7 @@ Claude Code only gets your Claude chat installs when you sign in with a Claude a
 **Option 1: link the repo** (Mac or Linux, needs git). Updates with one `git pull`.
 
 ```bash
-git clone https://github.com/nishkarsh-shah/prompt-master.git ~/prompt-master
+git clone -b main-staging https://github.com/nishkarsh-shah/prompt-master.git ~/prompt-master
 mkdir -p ~/.claude/skills && ln -sfn ~/prompt-master/claude/plugin/skills/prompt-master ~/.claude/skills/prompt-master
 ```
 
@@ -61,7 +61,7 @@ Expand-Archive "$env:TEMP\prompt-master-claude.zip" -DestinationPath "$HOME\.cla
 **Option 1: link the repo** (Mac or Linux, needs git). If you already cloned it for Claude Code, skip the first line.
 
 ```bash
-git clone https://github.com/nishkarsh-shah/prompt-master.git ~/prompt-master
+git clone -b main-staging https://github.com/nishkarsh-shah/prompt-master.git ~/prompt-master
 mkdir -p ~/.agents/skills && ln -sfn ~/prompt-master/chatgpt/prompt-master ~/.agents/skills/prompt-master
 ```
 
@@ -70,14 +70,14 @@ mkdir -p ~/.agents/skills && ln -sfn ~/prompt-master/chatgpt/prompt-master ~/.ag
 Mac or Linux:
 
 ```bash
-mkdir -p ~/.agents/skills && curl -fsSL -o /tmp/prompt-master-chatgpt.zip https://github.com/nishkarsh-shah/prompt-master/raw/main/chatgpt/prompt-master-chatgpt.zip && unzip -o /tmp/prompt-master-chatgpt.zip -d ~/.agents/skills
+mkdir -p ~/.agents/skills && curl -fsSL -o /tmp/prompt-master-chatgpt.zip https://github.com/nishkarsh-shah/prompt-master/raw/main-staging/chatgpt/prompt-master-chatgpt.zip && unzip -o /tmp/prompt-master-chatgpt.zip -d ~/.agents/skills
 ```
 
 Windows (PowerShell):
 
 ```powershell
 New-Item -ItemType Directory -Force "$HOME\.agents\skills" | Out-Null
-Invoke-WebRequest https://github.com/nishkarsh-shah/prompt-master/raw/main/chatgpt/prompt-master-chatgpt.zip -OutFile "$env:TEMP\prompt-master-chatgpt.zip"
+Invoke-WebRequest https://github.com/nishkarsh-shah/prompt-master/raw/main-staging/chatgpt/prompt-master-chatgpt.zip -OutFile "$env:TEMP\prompt-master-chatgpt.zip"
 Expand-Archive "$env:TEMP\prompt-master-chatgpt.zip" -DestinationPath "$HOME\.agents\skills" -Force
 ```
 
@@ -92,7 +92,8 @@ On Claude Team and Enterprise plans, and on ChatGPT workspace plans, an admin ma
 | You installed with | To update |
 | --- | --- |
 | The Claude directory button | Nothing to do. It updates itself |
-| A zip upload | Download the new zip and upload it again |
+| A zip upload (Claude or ChatGPT) | [Remove the old copy](#remove-an-old-copy), then download the new zip and upload it |
+| A marketplace in the ChatGPT desktop app | Refresh the marketplace under **Plugins**, then update Prompt Master |
 | `$skill-installer` in Codex | Delete `~/.agents/skills/prompt-master`, run the install command again, then restart Codex |
 | A linked repo | `git -C ~/prompt-master pull` |
 | A terminal download | Run the same command again |
@@ -102,6 +103,6 @@ On Claude Team and Enterprise plans, and on ChatGPT workspace plans, an admin ma
 Before switching to a different way, remove the one you have:
 
 - **Claude chat:** open **Settings → Plugins**, find Prompt Master, and remove it.
-- **ChatGPT:** open **Plugins**, find Prompt Master, and turn it off or uninstall it.
+- **ChatGPT:** open [chatgpt.com/skills](https://chatgpt.com/skills), find Prompt Master, and use its **⋯** menu to remove it.
 - **Claude Code terminal:** `rm -rf ~/.claude/skills/prompt-master`
 - **Codex:** `rm -rf ~/.agents/skills/prompt-master`

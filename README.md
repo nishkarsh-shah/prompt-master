@@ -28,15 +28,22 @@ Sign in, click **Add**, then type `pm help` in a new chat. Claude Code gets it t
 
 ### ChatGPT
 
-[Download the plugin zip](https://github.com/nishkarsh-shah/prompt-master/raw/main/chatgpt/prompt-master-openai-plugin.zip), then open **Plugins → Add → Upload plugin archive**, pick the zip and click **Add plugin**.
+1. [Download the skill zip](https://github.com/nishkarsh-shah/prompt-master/raw/main-staging/chatgpt/prompt-master-chatgpt.zip).
+2. Open [chatgpt.com/skills](https://chatgpt.com/skills), click **Add → Upload a skill** and pick the zip.
+
+Upload it once in your browser, and it works in Chat and Work. Codex needs its [own install](#codex). Menus differ by plan and change often: if you don't see **Upload a skill**, your plan or workspace may not allow it.
 
 ### Codex
+
+Codex has its own install, separate from ChatGPT. Do it once and it works in all your projects on that computer.
 
 In Codex, type:
 
 ```text
-$skill-installer install https://github.com/nishkarsh-shah/prompt-master/tree/main/chatgpt/prompt-master
+$skill-installer install https://github.com/nishkarsh-shah/prompt-master/tree/main-staging/chatgpt/prompt-master
 ```
+
+Or, in the ChatGPT desktop app, open **Plugins → Add → Add a marketplace**, enter `nishkarsh-shah/prompt-master` with Git ref `main-staging`, then install Prompt Master from it.
 
 > [!TIP]
 > **Link not working, or on a team plan?** See [other ways to install](docs/install.md): zip upload, terminal, updates and admin settings.
@@ -112,7 +119,7 @@ Simple edits, like a rename or a typo fix, always get the lightest model.
 | **Capital letters** | `pm:` and `Pm:` both work, for phone keyboards. All-caps `PM:` is ignored, so notes like "PM: standup" don't start it. |
 | **Plain asks** | In Claude, "improve this prompt" or "which model should I use?" works without `pm`. |
 | **Advice only** | It never switches models or starts subagents for you. You choose. |
-| **ChatGPT Chat** | You pick from fewer models there, so it suggests only an effort level. |
+| **ChatGPT Chat** | Set the suggested effort and use whichever model you like. The model it names is for Work and Codex. |
 | **Language** | The rewrite uses the same language as your draft. |
 
 ### Updates, plans and privacy

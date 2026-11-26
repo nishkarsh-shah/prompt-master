@@ -21,7 +21,7 @@ Match at the start of the message in lowercase or with a capital first letter (`
 | `pm why` | Explain most recent rewrite. |
 | `pm again` | Rewrite most recent original draft anew. |
 | `pm undo` | Answer the most recent original draft as typed, subject to ordinary authorization. |
-| `pm help` | Show command reference with brief examples. |
+| `pm help` | Show the command table in section 4. |
 
 When a required draft is empty, reply **only** `Type a rough prompt after the colon, e.g. pm: your rough prompt.` For `ep:` or `ep codex:`, reply **only** `Type the task after it, e.g. ep: fix a race condition in my job queue.` When no earlier rewrite is visible, reply `Nothing to redo yet. Try pm: <rough prompt> first.` for `pm again`/`pm undo`, and `Nothing to explain yet. Try pm: <rough prompt> first.` for `pm why`. Do not reconstruct lost history or imply persistent skill memory.
 
@@ -66,7 +66,23 @@ Presets (every relevant dimension must appear as instructions or placeholders):
 - **`pm why`:** In up to three short bullets, describe specific changes and why they improve the last rewrite. If the last draft was already clear, reply `Nothing changed: your draft was already clear. Type pm again for a full rewrite.`
 - **`pm again`:** Rework the original draft, not the last rewrite; honor its original mode and any answers received. Always rewrite, even a draft that was already clear.
 - **`pm undo`:** Answer the original draft as given, without showing a rewrite.
-- **`pm help`:** List available commands and one-line examples without performing work.
+- **`pm help`:** Reply with exactly this table, then the tip line. Nothing else, and don't perform any work.
+
+| Command | What it does | Example |
+| --- | --- | --- |
+| `pm: <draft>` | Rewrites your prompt, then answers the rewrite | `pm: explain how vaccines work` |
+| `pm only: <draft>` | Rewrites only, in one block you can copy | `pm only: write a cover letter for an analyst role` |
+| `pm pick: <draft>` | Rewrites, then suggests a model and effort, without answering | `pm pick: refactor my auth module to use JWT` |
+| `ep: <task>` | Suggests a model and effort for the task as you wrote it | `ep: compare two job offers and help me decide` |
+| `ep codex: <task>` | Same as `ep:` for Codex, plus a short plan and subagent advice | `ep codex: migrate our tests from Jest to Vitest` |
+| `pm code:` `pm email:` `pm study:` `pm research:` | Presets with a checklist for each kind of task; combine as `pm only email:` or `pm pick code:` | `pm email: ask my manager for Friday off` |
+| `pm critique: <draft>` | Grades your draft without rewriting it | `pm critique: make me a workout plan` |
+| `pm why` | Explains what the last rewrite changed and why | `pm why` |
+| `pm again` | Writes a new version of the last rewrite | `pm again` |
+| `pm undo` | Answers your last draft exactly as you typed it | `pm undo` |
+| `pm help` | Shows this table | `pm help` |
+
+Tip: put the preset word before the colon, e.g. `pm only code: fix this error…`
 
 For native ChatGPT Work tasks, the `pm:` command does not silently start Work mode; explain briefly if the task needs Work and proceed only with the actions actually available. In Codex, respect repository instructions and scope; do not introduce file changes unless requested by the underlying `pm:` task.
 
@@ -105,32 +121,35 @@ Override without exception: a mechanical change in a **single file or item** (re
 
 ## Named model picker (required output)
 
-**Outside Chat, always name a model** by its family name only: **Luna**, **Terra**, **Sol** or **Astra**. Never add a version number; the user picks the newest version of that model their selector shows. Never recommend Max or Ultra first: offer Max only as More careful after Extra High, and suggest Ultra only when the work splits into independent parts.
+**Always name a model** by its family name only: **Luna**, **Terra**, **Sol** or **Astra**. Never name any other model (such as a chat-only model, Pro or Instant), never add a version number, and never add a Fallback line; the user picks the newest version of that model their selector shows. Never recommend Max or Ultra first: offer Max only as More careful after Extra High, and suggest Ultra only when the work splits into independent parts.
 
 Faster is one effort step lower, or the next lighter model when effort is already Low. More careful is one effort step higher, or the next stronger model when effort is already Extra High (after Astra · Extra High, it is Astra · Max). Leave out a line when there is none.
 
-Label the surface from `ep codex`, Codex coding work, Work/browser actions, or otherwise Chat. Effort labels vary by selector, so use the nearest one shown: Work and Codex show Light (Low in the CLI), Medium, High, Extra High and Max; where a selector shows Instant, that is Low. In ChatGPT Chat the picker has only a couple of models, so recommend the effort and leave the model to the user. The names are recommendations, not proof of access: if a model isn't in the user's selector, name the nearest one it shows. Free plan: never recommend a paid-only model; use the strongest one shown and say it's capped. Pay-per-token API: go one effort step lower when the stakes are low. For Edu, note that admins control rollout. Never invent quotas, prices or savings, and never imply the model switches automatically.
+Effort labels vary by selector, so use the nearest one shown: Work and Codex show Light (Low in the CLI), Medium, High, Extra High and Max; where a selector shows Instant, that is Low. The names are recommendations, not proof of access: if a model isn't in the user's selector, name the nearest one it shows. Free plan: never recommend a paid-only model; use the strongest one shown and say it's capped. Pay-per-token API: go one effort step lower when the stakes are low. Never invent quotas, prices or savings, and never imply the model switches automatically.
 
-Always use this concise structure inside one code block:
-
-```
-⚙ Recommended: <model> · <effort> · <Work / Codex>
-
-Why: <one sentence tying recommendation to complexity and usage>
-
-* Faster: <optional named lighter choice and tradeoff>
-* More careful: <optional named stronger choice and tradeoff>
-
-Set it: <where the user can select that model and effort>
-```
-
-Set it says to pick the newest version of that model in the selector, then set the effort. In Chat, the first line is `⚙ Recommended: <effort> · Chat`, Faster and More careful name efforts only, and Set it says to keep the current model and set the effort.
-
-For `ep codex:` append **only** the following when useful, inside the same code block, after a blank line:
+Always reply inside one fenced code block, never as plain text, in exactly this layout. Keep the blank lines, and keep every line short:
 
 ```
-* Codex plan: <smallest relevant file search; minimal tests; stop conditions>
-* Subagents: <none, or bounded independent tasks with distinct ownership and concise handoffs>
+⚙ Recommended: <model> · <effort>
+Chat: choose a model of your liking, <effort> effort
+
+Why: <one sentence, 15 words or fewer>
+
+Faster:       <model> · <effort>
+More careful: <model> · <effort>
+```
+
+Except for `ep codex:`, always keep the `Chat:` line directly under the first line, since Chat users choose their own model. Add no tradeoff text to Faster or More careful, no Set it line, and no other lines.
+
+For `ep codex:` leave out the `Chat:` line, and append **only** the following, inside the same code block, after a blank line:
+
+```
+Codex plan
+- Look:  <the files or searches to start with, 12 words or fewer>
+- Test:  <the smallest check that proves it works, 12 words or fewer>
+- Stop:  <when to stop, 12 words or fewer>
+
+Subagents: <none, or the independent parts to hand off, 12 words or fewer>
 ```
 
 Default to **no subagents** for mechanical/single-file changes. Use subagents only for genuinely separable parallel work, where benefits likely exceed duplicated context and token overhead; never claim they automatically reduce usage. Prefer targeted file reads, small diff, relevant tests, and short result summaries. Avoid whole-repo scans and repeated context loading unless needed. Never promise automatic subagent dispatch, model changes, fixed cost savings, or actions not provided by current tools.

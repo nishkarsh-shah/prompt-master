@@ -17,16 +17,16 @@ From the repo folder, run the commands for the edition you changed, then upload 
 cd claude/plugin/skills && rm -f ../../prompt-master-claude.zip && zip -r ../../prompt-master-claude.zip prompt-master -x '*.DS_Store'
 ```
 
-**ChatGPT** needs the plugin zip (upload under **Plugins → Add → Upload plugin archive**). This copies your edited skill into the plugin folder, then zips it:
-
-```bash
-cp -R chatgpt/prompt-master/. chatgpt/plugin/skills/prompt-master/ && cd chatgpt/plugin && rm -f ../prompt-master-openai-plugin.zip && zip -r ../prompt-master-openai-plugin.zip . -x '*.DS_Store'
-```
-
-**Codex** uses the skill zip:
+**ChatGPT and Codex** use the skill zip (for ChatGPT, upload it at chatgpt.com/skills → **Add → Upload a skill**):
 
 ```bash
 cd chatgpt && rm -f prompt-master-chatgpt.zip && zip -r prompt-master-chatgpt.zip prompt-master -x '*.DS_Store'
+```
+
+**OpenAI directory submission** uses the plugin zip. This copies your edited skill into the plugin folder, then zips it:
+
+```bash
+cp -R chatgpt/prompt-master/. chatgpt/plugin/skills/prompt-master/ && cd chatgpt/plugin && rm -f ../prompt-master-openai-plugin.zip && zip -r ../prompt-master-openai-plugin.zip . -x '*.DS_Store'
 ```
 
 After a change, test it in a new chat with `pm help` and one `ep:` task, and make the same change in the other edition so the two stay in step.

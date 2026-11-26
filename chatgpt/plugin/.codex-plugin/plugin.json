@@ -35,6 +35,7 @@
     "websiteURL": "https://github.com/nishkarsh-shah/prompt-master",
     "supportURL": "https://github.com/nishkarsh-shah/prompt-master/issues",
     "privacyPolicyURL": "https://github.com/nishkarsh-shah/prompt-master/blob/d513ea0173d377e42c22c08c3695990f33de4c37/chatgpt/plugin/PRIVACY.md",
+    "termsOfServiceURL": "https://github.com/nishkarsh-shah/prompt-master/blob/main-staging/chatgpt/plugin/TERMS.md",
     "defaultPrompt": [
       "pm help",
       "pm email: follow up with a client who hasn't replied in a week",

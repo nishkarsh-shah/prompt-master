@@ -1,4 +1,6 @@
 interface:
   display_name: "Prompt Master"
   short_description: "Rewrite prompts, pick a model"
+  icon_small: "./assets/icon-small.png"
+  icon_large: "./assets/icon-large.png"
   default_prompt: "pm help"
