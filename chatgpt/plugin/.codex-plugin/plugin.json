@@ -22,21 +22,25 @@
   "interface": {
     "displayName": "Prompt Master",
     "shortDescription": "Rewrite prompts, pick a model",
-    "longDescription": "Turns rough prompts into clear ones and recommends the model and effort level to run them. Type pm: before a prompt. Works for code, email, study and research.",
+    "longDescription": "Prompt Master rewrites a rough prompt into a clear one, shows you the rewrite, then answers it. For anyone who writes prompts in a hurry: students, people writing emails at work, and developers using Codex.\n\nType pm: before a prompt, or a preset like pm email: or pm study:. Type ep: before a task to get a model and effort recommendation. Type pm help to see every command.\n\nIt gives advice only, keeps no data, and its model picks are a rule of thumb you can always override.",
     "developerName": "Nishkarsh Shah",
     "category": "Productivity",
     "capabilities": [
-      "Rewrite prompts",
-      "Recommend model and effort"
+      "Rewrite rough prompts into clear ones",
+      "Recommend a model and effort level",
+      "Presets for code, email, study and research",
+      "Score a prompt out of 10",
+      "Plan Codex tasks with ep codex"
     ],
     "websiteURL": "https://github.com/nishkarsh-shah/prompt-master",
     "supportURL": "https://github.com/nishkarsh-shah/prompt-master/issues",
-    "privacyPolicyURL": "https://github.com/nishkarsh-shah/prompt-master/blob/main/chatgpt/plugin/PRIVACY.md",
+    "privacyPolicyURL": "https://github.com/nishkarsh-shah/prompt-master/blob/0bb4e78d3f59f97ad18c32fca54c8784c7cb85cc/chatgpt/plugin/PRIVACY.md",
     "defaultPrompt": [
       "pm help",
-      "pm: help me write a message asking my landlord to fix the heater",
+      "pm email: follow up with a client who hasn't replied in a week",
       "ep: fix a race condition in my job queue"
     ],
+    "brandColor": "#FF5A4A",
     "composerIcon": "./assets/icon.png",
     "logo": "./assets/logo.png"
   },
