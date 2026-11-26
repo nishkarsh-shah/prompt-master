@@ -28,7 +28,7 @@ Sign in, click **Add**, then type `pm help` in a new chat. Claude Code gets it t
 
 ### ChatGPT
 
-[Download the zip](https://github.com/nishkarsh-shah/prompt-master/raw/main/chatgpt/prompt-master-chatgpt.zip), then open **Skills → Create → Upload from your computer** and pick it.
+[Download the plugin zip](https://github.com/nishkarsh-shah/prompt-master/raw/main/chatgpt/prompt-master-openai-plugin.zip), then open **Plugins → Add → Upload plugin archive**, pick the zip and click **Add plugin**.
 
 ### Codex
 
