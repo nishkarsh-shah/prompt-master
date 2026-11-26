@@ -34,11 +34,11 @@
     ],
     "websiteURL": "https://github.com/nishkarsh-shah/prompt-master",
     "supportURL": "https://github.com/nishkarsh-shah/prompt-master/issues",
-    "privacyPolicyURL": "https://github.com/nishkarsh-shah/prompt-master/blob/0bb4e78d3f59f97ad18c32fca54c8784c7cb85cc/chatgpt/plugin/PRIVACY.md",
+    "privacyPolicyURL": "https://github.com/nishkarsh-shah/prompt-master/blob/d513ea0173d377e42c22c08c3695990f33de4c37/chatgpt/plugin/PRIVACY.md",
     "defaultPrompt": [
       "pm help",
       "pm email: follow up with a client who hasn't replied in a week",
-      "ep: fix a race condition in my job queue"
+      "ep: compare two job offers and help me decide"
     ],
     "brandColor": "#FF5A4A",
     "composerIcon": "./assets/icon.png",
