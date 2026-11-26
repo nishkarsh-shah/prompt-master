@@ -1,8 +1,31 @@
-# Terminal install
+# Other ways to install
 
-For installing from the terminal instead of uploading a zip. Jump to [Claude Code](#claude-code) or [Codex](#codex).
+The quickest install is in the [README](../README.md#install). Use this page if the directory link doesn't work for you, you're on a team plan, or you prefer the terminal. Jump to [Claude zip](#claude-zip-upload), [team plans](#team-and-workspace-plans), [updating](#updating), [Claude Code terminal](#claude-code) or [Codex terminal](#codex).
 
 [← Back to the README](../README.md)
+
+**Use only one way per app.** Installing twice shows Prompt Master twice.
+
+## Claude zip upload
+
+This works on the web, desktop and mobile apps.
+
+1. Download [`prompt-master-claude.zip`](https://github.com/nishkarsh-shah/prompt-master/raw/main/claude/prompt-master-claude.zip).
+2. In **Settings → Capabilities**, turn on **Code execution and file creation**.
+3. Under **Skills**, choose **Upload skill**, pick the zip and switch it on.
+
+A zip upload also runs in Claude Code as `/prompt-master` when you sign in with the same account.
+
+## Team and workspace plans
+
+On Claude Team and Enterprise plans, and on ChatGPT workspace plans, an admin may need to allow plugins or skill uploads first.
+
+## Updating
+
+- **Claude directory:** updates itself when a new version is published.
+- **Zip upload:** download the new zip and upload it again. An uploaded skill doesn't pull changes from GitHub.
+- **Codex installer:** delete `~/.agents/skills/prompt-master` and run the install command again. Restart Codex if `pm help` doesn't respond.
+- **Terminal installs:** see below.
 
 ## Claude Code
 
